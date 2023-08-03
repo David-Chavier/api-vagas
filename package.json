@@ -12,9 +12,9 @@
         "build": "tsc",
         "typeorm": "typeorm-ts-node-commonjs",
         "typeorm:create": "typeorm migration:create",
-        "typeorm:run": "npm run typeorm migration:run -- -d ./src/database/config/database.config.ts",
+        "typeorm:run": "npm run typeorm migration:run -- -d ./src/main/config/database.config.ts",
         "typeorm:revert": "npm run typeorm migration:revert -- -d ./src/database/config/database.config.ts",
-        "typeorm:generate": "npm run typeorm migration:generate -- -d ./src/database/config/database.config.ts"
+        "typeorm:generate": "npm run typeorm migration:generate -- -d ./src/main/config/database.config.ts"
     },
     "keywords": [],
     "author": "",
@@ -33,6 +33,7 @@
         "cpf-cnpj-validator": "^1.0.3",
         "dotenv": "^16.1.4",
         "express": "^4.18.2",
+        "jsonwebtoken": "^9.0.1",
         "pg": "^8.11.1",
         "reflect-metadata": "^0.1.13",
         "typeorm": "^0.3.11",
