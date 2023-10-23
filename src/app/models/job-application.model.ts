@@ -29,6 +29,14 @@ export class JobApplication {
     return this._success;
   }
 
+  public toJson() {
+    return {
+      candidate: this._candidate.toJson(),
+      job: this._job,
+      date: this._date,
+    };
+  }
+
   public static create(
     application: JobApplicationEntity,
     candidate: User,

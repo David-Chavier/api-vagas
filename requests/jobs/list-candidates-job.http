@@ -1,5 +1,5 @@
-@HOST = http://localhost:8080 
+@HOST = http://localhost:3333 
 
-GET {{HOST}}/job/53faec78-55e1-4e75-be9f-34c907d5811e/candidate HTTP/1.1
+GET {{HOST}}/job/9ab5273f-0e9f-408f-b2a7-a4d1f18f680f/candidate HTTP/1.1
 Content-Type: application/json 
-Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZhYmNkNDZkLTFjMzEtNGZhNy1hNWZmLTNiNThhZjYxZGM5YiIsIm5hbWUiOiJKb8OjbyBQZWRybyIsImVtYWlsIjoiam9hb0BnbWFpbC5jb20iLCJ0eXBlIjoiUiIsImVudGVycHJpc2VOYW1lIjoiR3Jvd2RldiBTQSIsImlhdCI6MTY5MTExNTAxM30.7DoMoQ1-6QlV2ilrvdUmvmNzYqJ1wcPN_eABZG60GDA
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImM1MWMzYzgzLTUzNWQtNDVkNy04MzE0LTc1MmY0YzFhOWM2MSIsIm5hbWUiOiJNb2lzZXMgTHVjYXMiLCJlbWFpbCI6Im1vaXNlc0BnbWFpbC5jb20iLCJ0eXBlIjoiUiIsImVudGVycHJpc2VOYW1lIjoiVGVjIFNBIiwiaWF0IjoxNjk3ODA3NDA5fQ.fWQq6ns7XvjolCkArHlT66G_1rH79hrFdu4AMnnpVl0

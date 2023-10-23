@@ -13,7 +13,7 @@ export const jobApplicationRoutes = () => {
     CandidateValidator.checkCandidateToken,
   ];
 
-  app.post("/", logged, new JobApplicationController().create);
+  app.post("/:idJob", logged, new JobApplicationController().create);
 
   // LISTA VAGAS APLICADAS - RECRUITER
   app.get("/job", logged, new JobApplicationController().listByCandidate);

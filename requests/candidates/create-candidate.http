@@ -1,10 +1,10 @@
-@HOST = http://localhost:8080 
+@HOST = http://localhost:3333
 
 POST {{HOST}}/candidate HTTP/1.1
 Content-Type: application/json 
 
 {
     "name": "Maria Lurdes",
-    "email": "maria@gmail.com",
+    "email": "maria@gmaill.com",
     "password": "senha123"
 }

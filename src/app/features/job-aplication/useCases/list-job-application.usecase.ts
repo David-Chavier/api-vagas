@@ -20,6 +20,8 @@ export class ListJobsApplication implements Usecase {
     const repository = new JobApplicationRepository();
     const result = await repository.listByCandidateId(idCandidate);
 
+    console.log(idCandidate);
+
     const data = result?.map((job) => job?.job.toJson());
     await cacheRepository.set(`jobs-${idCandidate}`, data);
 

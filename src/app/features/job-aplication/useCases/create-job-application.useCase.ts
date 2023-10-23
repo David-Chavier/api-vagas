@@ -1,10 +1,5 @@
 import { JobApplication } from "../../../models/job-application.model";
-import { Job } from "../../../models/job.model";
-// private _candidate: User,
-// private _job: Job,
-// private _date: Date
-
-import { User } from "../../../models/user.model";
+import { CacheRepository } from "../../../shared/database/repositories/cache.repository";
 import { Result, UsecaseResponse } from "../../../shared/util";
 import { Usecase } from "../../../shared/util/usecase.contract";
 import { JobRepository } from "../../job/repositories/job.repository";
@@ -27,7 +22,8 @@ export class CreateJobApplicationUsecase implements Usecase {
 
     // 2- Verifica se a vaga existe
     const jobRepository = new JobRepository();
-    const job = await jobRepository.getById(params.idJob);
+    const { job } = await jobRepository.getById(params.idJob);
+
     if (!job) {
       return UsecaseResponse.notFound("Job");
     }
@@ -70,9 +66,13 @@ export class CreateJobApplicationUsecase implements Usecase {
     const jobApplication = new JobApplication(user, job, new Date());
     await jobApplicationRepository.create(jobApplication);
 
+    const cacheRepository = new CacheRepository();
+    await cacheRepository.delete(`jobs-${params.idCandidate}`);
+    await cacheRepository.delete(`candidate-${params.idJob}`);
+
     return UsecaseResponse.success(
       "Job Application successfully created",
-      jobApplication
+      jobApplication.toJson()
     );
   }
 }
