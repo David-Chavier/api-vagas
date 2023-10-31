@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { HttpResponse } from "../../../shared/util/http-response.adapter";
-import { CreateCandidateUsecase } from "../usecases/create-candidate.usecase";
 import { ListCandidateUsecase } from "../usecases/list-candidate.usecase";
+import { CreateCandidateUsecase } from "../usecases/create-candidate.usecase";
 
 export class CandidateController {
   public async create(req: Request, res: Response) {

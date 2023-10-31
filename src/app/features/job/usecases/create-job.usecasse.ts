@@ -1,5 +1,6 @@
 import { Job } from "../../../models/job.model";
 import { Recruiter } from "../../../models/recruiter.model";
+import { CacheRepository } from "../../../shared/database/repositories/cache.repository";
 import { Result, Usecase, UsecaseResponse } from "../../../shared/util";
 import { UserRepository } from "../../user/repositories/user.repository";
 import { JobRepository } from "../repositories/job.repository";
@@ -38,6 +39,9 @@ export class CreateJobUsecase implements Usecase {
     // 4 - chamar repository JOB
     const jobRepository = new JobRepository();
     await jobRepository.create(job);
+
+    const cacheRepository = new CacheRepository();
+    await cacheRepository.delete(`jobs`);
 
     // 5 - retorna
     return {

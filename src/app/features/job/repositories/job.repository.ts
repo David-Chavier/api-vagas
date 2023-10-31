@@ -35,6 +35,12 @@ export class JobRepository {
     return JobRepository.mapRowToModelCandidates(result);
   }
 
+  public async getJobs(): Promise<(Job | undefined)[]> {
+    const result = await this.repository.find();
+
+    return result.map((job) => JobRepository.mapRowToModel(job));
+  }
+
   public async list(idRecuiter: string): Promise<any> {
     const result = await this.repository.find({
       where: {
@@ -46,7 +52,7 @@ export class JobRepository {
       },
     });
 
-    return result.map((job) => JobRepository.mapRowToModelCandidates(job));
+    return result.map((job) => JobRepository.mapRowToModel(job));
   }
 
   public static mapRowToModelCandidates(row: JobEntity | null) {
@@ -67,7 +73,7 @@ export class JobRepository {
     };
   }
 
-  public static mapRowToModel(job?: JobEntity | null) {
+  public static mapRowToModel(job?: JobEntity | undefined) {
     if (!job) {
       return undefined;
     }

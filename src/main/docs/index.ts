@@ -3,6 +3,7 @@ import {
   jobsWithIdPath,
   jobsApplicationPath,
   jobsApplicationWithIdPath,
+  jobsAllPath,
   authPath,
   candidatesPath,
 } from "./docs";
@@ -38,8 +39,9 @@ export default {
     "/auth": authPath,
     "/recruiter": recruitersPath,
     "/candidate": candidatesPath,
-    "/job": jobsPath,
+    "/job/all": jobsAllPath,
     "/job/{id}/candidate": jobsWithIdPath,
+    "/job": jobsPath,
     "/application/job": jobsApplicationPath,
     "/application/{id}": jobsApplicationWithIdPath,
   },

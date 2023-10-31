@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { CreateJobUsecase } from "../usecases/create-job.usecasse";
 import { HttpResponse } from "../../../shared/util";
 import { ListCandidatesJob } from "../usecases/list-candidates-job.usecase.";
+import { ListAllJobs } from "../usecases/list-all-jobs.usecase";
 
 export class JobController {
   public async create(req: Request, res: Response) {
@@ -40,7 +41,21 @@ export class JobController {
     }
   }
 
-  public async listByJob(req: Request, res: Response) {
+  public async listJob(req: Request, res: Response) {
+    try {
+      const usecase = new ListAllJobs();
+      const result = await usecase.execute();
+
+      return res.status(result.code).send(result);
+    } catch (error: any) {
+      return res.status(500).send({
+        ok: false,
+        message: error.toString(),
+      });
+    }
+  }
+
+  public async listJobById(req: Request, res: Response) {
     try {
       const { idJob } = req.params;
       const { loggedUserId } = req.headers;
