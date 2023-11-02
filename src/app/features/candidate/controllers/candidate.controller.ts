@@ -8,15 +8,7 @@ export class CandidateController {
     try {
       // 1 - parametros
       const { name, email, password } = req.body;
-      if (!name) {
-        return HttpResponse.fieldNotProvided(res, "Name");
-      }
-      if (!email) {
-        return HttpResponse.fieldNotProvided(res, "Email");
-      }
-      if (!password) {
-        return HttpResponse.fieldNotProvided(res, "Password");
-      }
+
       // 2 - processamento = chama usecase
       const result = await new CreateCandidateUsecase().execute(req.body);
 

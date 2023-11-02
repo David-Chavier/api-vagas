@@ -2,14 +2,6 @@ import { Request, Response } from "express";
 import { ListJobsApplication } from "../usecases/list-job-application.usecase";
 import { CreateJobApplicationUsecase } from "../usecases/create-job-application.usecase";
 
-// POST /job
-// POST /job/:id/application
-
-// POST /application  { id_job: 123 }
-
-// idCandidato => req.headers
-// idVaga => req.params
-
 export class JobApplicationController {
   public async create(req: Request, res: Response) {
     try {

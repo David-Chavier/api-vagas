@@ -13,7 +13,11 @@ export const recruiterRoutes = () => {
   ];
 
   app.get("/", logged, new RecruiterController().list);
-  app.post("/", new RecruiterController().create);
+  app.post(
+    "/",
+    RecruiterValidator.checkCreateRecruiter,
+    new RecruiterController().create
+  );
 
   app.use("/:idJob/application", logged, jobApplicationRoutes());
 

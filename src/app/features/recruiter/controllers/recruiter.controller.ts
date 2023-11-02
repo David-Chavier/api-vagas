@@ -6,12 +6,6 @@ import { ListRecruitersUsecase } from "../usecases/list-recruiters.usecase";
 export class RecruiterController {
   public async create(req: Request, res: Response) {
     try {
-      // 1 - parametros
-      const { email, name, password, enterpriseName } = req.body;
-      if (!email) {
-        return HttpResponse.fieldNotProvided(res, "Email");
-      }
-
       // 2 - processamento
       const result = await new CreateRecruiterUsecase().execute(req.body);
 

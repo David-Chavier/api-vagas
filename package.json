@@ -29,6 +29,7 @@
         "@types/jsonwebtoken": "^9.0.4",
         "@types/node": "^18.11.18",
         "@types/pg": "^8.10.2",
+        "@types/supertest": "^2.0.15",
         "@types/swagger-ui-express": "^4.1.5",
         "@types/uuid": "^9.0.0",
         "ts-jest": "^29.1.1",
@@ -48,6 +49,7 @@
         "jsonwebtoken": "^9.0.1",
         "pg": "^8.11.1",
         "reflect-metadata": "^0.1.13",
+        "supertest": "^6.3.3",
         "swagger-ui-express": "^5.0.0",
         "typeorm": "^0.3.11",
         "uuid": "^9.0.0"
