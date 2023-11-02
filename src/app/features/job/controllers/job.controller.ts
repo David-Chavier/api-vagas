@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { CreateJobUsecase } from "../usecases/create-job.usecasse";
 import { HttpResponse } from "../../../shared/util";
-import { ListCandidatesJob } from "../usecases/list-candidates-job.usecase.";
+import { ListCandidatesJob } from "../usecases/list-candidates-job.usecase";
 import { ListAllJobs } from "../usecases/list-all-jobs.usecase";
 
 export class JobController {

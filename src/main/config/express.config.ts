@@ -4,7 +4,7 @@ import { recruiterRoutes } from "../../app/features/recruiter/routes/recruiter.r
 import { loginRoutes } from "../../app/features/user/routes/login.routes";
 import { candidateRoutes } from "../../app/features/candidate/routes/candidate.routes";
 import { jobRoute } from "../../app/features/job/routes/job.routes";
-import { jobApplicationRoutes } from "../../app/features/job-aplication/routes/job-application.routes";
+import { jobApplicationRoutes } from "../../app/features/job-application/routes/job-application.routes";
 import { serve, setup } from "swagger-ui-express";
 import swaggerConfig from "../docs";
 

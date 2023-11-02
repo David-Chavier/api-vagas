@@ -31,7 +31,7 @@ describe("testando usecase de criação de candidato", () => {
       "any_name",
       "any_email",
       "any_password",
-      UserType.Candidate,
+      UserType.Recruiter,
       "any_enterprise"
     );
 

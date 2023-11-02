@@ -12,7 +12,7 @@ export class ListJobsApplication implements Usecase {
       return {
         ok: true,
         code: 200,
-        message: "Jobs from the Job application successfully listed",
+        message: "Jobs from the Job application successfully listed (cache!)",
         data: cacheResult,
       };
     }
@@ -28,7 +28,7 @@ export class ListJobsApplication implements Usecase {
     return {
       ok: true,
       code: 200,
-      message: "Jobs application successfully listed",
+      message: "Jobs from the Job application successfully listed",
       data,
     };
   }

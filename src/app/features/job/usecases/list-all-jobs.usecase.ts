@@ -32,7 +32,7 @@ export class ListAllJobs implements Usecase {
     return {
       ok: true,
       code: 200,
-      message: "Jobs successfully listed listed",
+      message: "Jobs successfully listed",
       data: result,
     };
   }
