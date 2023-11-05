@@ -17,7 +17,9 @@
         "test": "jest --silent --noStackTrace --runInBand",
         "test:verbose": "jest --verbose --runInBand --detectOpenHandles",
         "test:coverage": "jest --runInBand --coverage",
-        "test:watch": "jest --silent --noStackTrace --runInBand --watchAll"
+        "test:watch": "jest --silent --noStackTrace --runInBand --watchAll",
+        "typeorm:generate:test": "cross-env DB_ENV=test npm run typeorm:generate -- tests/app/shared/database/migrations/TestMigration",
+        "test:setup": "rimraf db.sqlite3 && rimraf ./tests/app/shared/database/migrations && npm run typeorm:generate:test && npm run typeorm:run:test"
     },
     "keywords": [],
     "author": "",
@@ -41,6 +43,7 @@
         "@sideway/formula": "^3.0.1",
         "cors": "^2.8.5",
         "cpf-cnpj-validator": "^1.0.3",
+        "cross-env": "^7.0.3",
         "dotenv": "^16.1.4",
         "express": "^4.18.2",
         "ioredis": "^5.3.2",
@@ -49,6 +52,7 @@
         "jsonwebtoken": "^9.0.1",
         "pg": "^8.11.1",
         "reflect-metadata": "^0.1.13",
+        "sqlite3": "^5.1.6",
         "supertest": "^6.3.3",
         "swagger-ui-express": "^5.0.0",
         "typeorm": "^0.3.11",
